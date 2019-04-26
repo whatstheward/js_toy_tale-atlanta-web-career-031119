@@ -33,6 +33,7 @@ function fetchToys(){
       let toy = e.target.parentElement
       toyId = toy.dataset.id
       let likes = parseInt(toy.querySelector('p').innerHTML) + 1
+      toy.querySelector('p').innerHTML = likes
       console.log(likes)
       fetch(`http://localhost:3000/toys/${toyId}`, {
         method: 'PATCH',
